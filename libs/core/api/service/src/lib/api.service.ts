@@ -10,27 +10,27 @@ export class ApiService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
-  makeUrl(url: string): string {
+  static makeUrl(url: string): string {
     return url.startsWith('http') ? url : url;
   }
 
   get<T = void>(url: string, options?: Partial<ApiRequestOptions>): Observable<T> {
-    return this.httpClient.get<T>(this.makeUrl(url), getApiRequestOptions(options));
+    return this.httpClient.get<T>(ApiService.makeUrl(url), getApiRequestOptions(options));
   }
 
   post<T = void>(url: string, body?: unknown | null, options?: Partial<ApiRequestOptions>): Observable<T> {
-    return this.httpClient.post<T>(this.makeUrl(url), body ?? null, getApiRequestOptions(options));
+    return this.httpClient.post<T>(ApiService.makeUrl(url), body ?? null, getApiRequestOptions(options));
   }
 
   patch<T = void>(url: string, body: unknown | null, options?: Partial<ApiRequestOptions>): Observable<T> {
-    return this.httpClient.patch<T>(this.makeUrl(url), body, getApiRequestOptions(options));
+    return this.httpClient.patch<T>(ApiService.makeUrl(url), body, getApiRequestOptions(options));
   }
 
   put<T = void>(url: string, body: unknown | null, options?: Partial<ApiRequestOptions>): Observable<T> {
-    return this.httpClient.put<T>(this.makeUrl(url), body, getApiRequestOptions(options));
+    return this.httpClient.put<T>(ApiService.makeUrl(url), body, getApiRequestOptions(options));
   }
 
   delete<T = void>(url: string, options?: Partial<ApiRequestOptions>): Observable<T> {
-    return this.httpClient.delete<T>(this.makeUrl(url), getApiRequestOptions(options));
+    return this.httpClient.delete<T>(ApiService.makeUrl(url), getApiRequestOptions(options));
   }
 }
