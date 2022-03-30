@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "api": "apps/api",
     "core-api-service": "libs/core/api/service",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e"
