@@ -15,6 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@banshop/api/user/application": [
+        "libs/api/user/application/src/index.ts"
+      ],
+      "@banshop/api/user/domain": ["libs/api/user/domain/src/index.ts"],
+      "@banshop/api/user/infrastructure": [
+        "libs/api/user/infrastructure/src/index.ts"
+      ],
       "@banshop/core/api/service": ["libs/core/api/service/src/index.ts"]
     }
   },

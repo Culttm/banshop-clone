@@ -1,8 +1,6 @@
 import config from './ormconfig';
 import { join } from 'path';
 
-const migrations = [`${join(__dirname, '../../../../../')}apps/api/migrations/**/*{.ts,.js}`];
-
 export = {
     ...config,
     entities: [
@@ -10,7 +8,9 @@ export = {
         `${join(process.cwd(), 'libs', 'api')}/**/*.entity.{ts,js}`,
         `${join(process.cwd(), 'apps', 'api')}/**/*.entity{.ts,.js}`,
     ],
-    migrations,
+    migrations: [
+        `${join(process.cwd())}/apps/api/migrations/**/*.ts`
+    ],
     cli: {
         migrationsDir: `apps/api/migrations`,
     },

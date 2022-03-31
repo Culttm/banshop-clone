@@ -1,8 +1,8 @@
 import { join } from 'path'
 import * as path from "path";
-import { DataSourceOptions } from "typeorm";
+import { ConnectionOptions } from "typeorm";
 
-const config: DataSourceOptions = {
+const config: ConnectionOptions = {
     type: 'sqlite',
     database: path.resolve(`${process.cwd()}`, 'data', 'db.sqlite'),
     entities: [

@@ -1,10 +1,9 @@
 import {Module} from '@nestjs/common';
 
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
 import {ConfigModule} from "@nestjs/config";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import config from "./config/ormconfig";
+import {UserControllerModule} from "@banshop/api/user/infrastructure";
 
 @Module({
     imports: [
@@ -16,9 +15,10 @@ import config from "./config/ormconfig";
                 ssl: process.env.NODE_ENV === 'production' ? {rejectUnauthorized: false} : false,
             },
         }),
+        UserControllerModule
     ],
-    controllers: [AppController],
-    providers: [AppService],
+    controllers: [],
+    providers: [],
 })
 export class AppModule {
 }

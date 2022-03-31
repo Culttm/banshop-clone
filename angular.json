@@ -2,6 +2,9 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "api-user-application": "libs/api/user/application",
+    "api-user-domain": "libs/api/user/domain",
+    "api-user-infrastructure": "libs/api/user/infrastructure",
     "core-api-service": "libs/core/api/service",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e"

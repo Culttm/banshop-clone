@@ -56,7 +56,7 @@
     "sqlite3": "^5.0.2",
     "ts-node": "^10.7.0",
     "tslib": "^2.0.0",
-    "typeorm": "^0.3.4",
+    "typeorm": "^0.2.45",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
